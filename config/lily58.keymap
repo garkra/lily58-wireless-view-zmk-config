@@ -9,6 +9,40 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        LColon_GUI {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <33 34>;
+        };
+
+        AS_GUI {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <25 26>;
+        };
+
+        SD_Alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <26 27>;
+        };
+
+        LK_Alt {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <33 32>;
+        };
+
+        DF_Ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <27 28>;
+        };
+
+        KJ_Ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <31 32>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
