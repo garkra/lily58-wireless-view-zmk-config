@@ -9,39 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        LColon_GUI {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <33 34>;
-        };
-
-        AS_GUI {
-            bindings = <&kp LEFT_GUI>;
-            key-positions = <25 26>;
-        };
-
-        SD_Alt {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <26 27>;
-        };
-
-        LK_Alt {
-            bindings = <&kp LEFT_ALT>;
-            key-positions = <33 32>;
-        };
-
-        DF_Ctrl {
-            bindings = <&kp LCTRL>;
-            key-positions = <27 28>;
-        };
-
-        KJ_Ctrl {
-            bindings = <&kp LCTRL>;
-            key-positions = <31 32>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -54,31 +22,13 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
-            display-name = "Base";
+            display-name = "garrett";
             bindings = <
-&kp GRAVE      &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION     &kp AMPERSAND                                        &kp PIPE                    &kp EQUAL           &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PERCENT
-&kp TAB        &kp Q             &kp W           &kp E                 &kp R               &kp T                                                &kp Y                       &kp U               &kp I                  &kp O            &kp P              &kp MINUS
-&mt LCTRL ESC  &kp A             &kp S           &kp D                 &kp F               &kp G                                                &kp H                       &kp J               &kp K                  &kp L            &kp SEMI           &kp SQT
-&kp LSHFT      &kp Z             &kp X           &kp C                 &kp V               &kp B                   &lt 2 CARET    &lt 2 DOLLAR  &kp N                       &kp M               &kp COMMA              &kp DOT          &kp FSLH           &kp RSHFT
-                                                 &kp LCTRL             &mt LEFT_ALT ENTER  &mt LEFT_GUI BACKSPACE  &lt 1 SPACE    &lt 1 SPACE   &mt LEFT_COMMAND BACKSPACE  &mt LEFT_ALT ENTER  &kp LCTRL
-            >;
-        };
-
-        nav_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
-            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
-            //                     |      |      |      |        |  |       |      |       |       |
-
-            display-name = "Nav";
-            bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                    &trans    &trans  &trans    &trans     &trans  &trans
-&trans      &trans        &trans        &kp RSHFT     &trans        &trans                                          &trans    &trans  &trans    &trans     &trans  &trans
-&trans      &trans        &kp LEFT      &kp DOWN      &kp RIGHT     &trans                                          &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans        &kp RS(HASH)    &kp LS(ASTERISK)  &trans    &trans  &trans    &trans     &trans  &trans
-                                        &trans        &trans        &trans        &trans          &trans            &trans    &trans  &trans
+&kp GRAVE      &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION  &kp AMPERSAND                               &kp PIPE  &kp EQUAL      &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp PERCENT
+&kp TAB        &kp Q             &kp W           &kp E                 &kp R            &kp T                                       &kp Y     &kp U          &kp I                  &kp O            &kp P              &kp MINUS
+&mt LCTRL ESC  &kp A             &kp S           &kp D                 &kp F            &kp G                                       &kp H     &kp J          &kp K                  &kp L            &kp SEMI           &mt RCTRL SQT
+&kp LSHFT      &kp Z             &kp X           &kp C                 &kp V            &kp B          &lt 2 CARET    &lt 2 DOLLAR  &kp N     &kp M          &kp COMMA              &kp DOT          &kp FSLH           &mt RSHFT ENTER
+                                                 &kp LCTRL             &kp LEFT_ALT     &kp LEFT_GUI   &lt 1 SPACE    &lt 1 SPACE   &mo 2     &kp BACKSPACE  &kp DELETE
             >;
         };
 
@@ -90,13 +40,31 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            display-name = "numpad";
+            display-name = "num";
             bindings = <
-&trans  &trans  &kp F7  &kp F8  &kp F9  &kp F10                    &trans  &kp N7  &kp N8   &kp N9     &kp LS(PLUS)  &trans
-&trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11                    &none   &kp N4  &kp N5   &kp N6     &kp MINUS     &trans
-&trans  &trans  &kp F1  &kp F2  &kp F3  &kp F12                    &trans  &kp N1  &kp N2   &kp N3     &kp LS(STAR)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans  &kp N0  &kp DOT  &kp EQUAL  &kp FSLH      &kp BSLH
-                        &trans  &trans  &trans   &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &kp F7  &kp F8  &kp F9  &kp F10                            &trans  &none    &none      &none   &kp LS(PLUS)  &trans
+&trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11                            &none   &kp N7   &kp N8     &kp N9  &kp MINUS     &trans
+&trans  &trans  &kp F1  &kp F2  &kp F3  &kp F12                            &trans  &kp N4   &kp N5     &kp N6  &kp LS(STAR)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans   &kp HASH    &kp ASTERISK  &trans  &kp N1   &kp N2     &kp N3  &kp FSLH      &kp BSLH
+                        &trans  &trans  &trans   &trans      &trans        &kp N0  &kp DOT  &kp EQUAL
+            >;
+        };
+
+        nav_layer {
+            // ------------------------------------------------------------------------------------------------------------
+            // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   |      |       |       |      |       |       |
+            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
+            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   ~   |
+            // |       |     |     |      |      |      |        |  |       |      |  _    |  +    |  {   |   }   |  "|"  |
+            //                     |      |      |      |        |  |       |      |       |       |
+
+            display-name = "nav";
+            bindings = <
+&bt BT_CLR  &bt BT_SEL 0       &bt BT_SEL 1    &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                    &trans    &trans    &trans        &trans     &trans  &trans
+&trans      &kp K_VOLUME_UP    &trans          &kp RSHFT         &trans        &trans                          &trans    &trans    &trans        &trans     &trans  &trans
+&trans      &kp K_VOLUME_DOWN  &kp LEFT        &kp DOWN          &kp RIGHT     &trans                          &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans      &kp K_MUTE         &kp K_PREVIOUS  &kp K_PLAY_PAUSE  &kp K_NEXT    &trans        &trans    &trans  &trans    &trans    &trans        &trans     &trans  &trans
+                                               &trans            &trans        &trans        &trans    &trans  &trans    &trans    &trans
             >;
         };
     };
