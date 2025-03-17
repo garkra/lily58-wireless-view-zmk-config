@@ -64,10 +64,10 @@
 
             display-name = "sym";
             bindings = <
-&trans  &trans          &trans        &trans        &trans        &trans                          &trans          &trans          &trans            &trans           &trans                    &trans
-&trans  &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9     &kp NUMBER_0              &trans
-&trans  &kp GRAVE       &kp HOME      &kp INSERT    &kp DELETE    &kp END                         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW  &kp SEMICOLON             &trans
-&trans  &kp LEFT_SHIFT  &trans        &trans        &trans        &trans        &trans    &trans  &kp MINUS       &kp EQUAL       &kp LEFT_BRACKET  &kp EQUAL        &mt LEFT_SHIFT BACKSLASH  &trans
+&trans  &trans          &trans        &trans        &trans        &trans                          &trans          &trans          &trans            &trans             &trans                    &trans
+&trans  &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8      &kp NUMBER_9       &kp NUMBER_0              &trans
+&trans  &kp GRAVE       &kp HOME      &kp INSERT    &kp DELETE    &kp END                         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW      &kp RIGHT_ARROW    &kp SEMICOLON             &trans
+&trans  &kp LEFT_SHIFT  &trans        &trans        &trans        &trans        &trans    &trans  &kp MINUS       &kp EQUAL       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &mt LEFT_SHIFT BACKSLASH  &trans
                                       &trans        &trans        &trans        &trans    &trans  &trans          &trans          &trans
             >;
         };
